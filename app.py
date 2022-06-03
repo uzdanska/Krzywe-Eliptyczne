@@ -34,12 +34,11 @@ def fy(y):
     Raises:
         ValueError: zwraca wyjątek gdy y nie jest liczbą całkowitą.
     """
-    while True:
-        try:
-            y = int(y)
-            return pow(y, 2)
-        except ValueError as e:
-            print("ValueError exception: ", e)
+    try:
+        y = int(y)
+        return pow(y, 2)
+    except ValueError as e:
+        print("ValueError exception: ", e)
 
 def wspPunktow(p):
     """
