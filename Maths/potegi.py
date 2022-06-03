@@ -24,3 +24,5 @@ def potegiModulo(p, g):
 
         potegiDf = pd.DataFrame(potegiP)
         return potegiDf.style.background_gradient()
+    else:
+        return 'Nie można policzyć kolejnym potęg '
