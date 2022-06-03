@@ -203,6 +203,7 @@ with col2:
         value = 17
     )
 
+## wyśrodkowanie przycisku Oblicz
 col1, col2, col3, col4, col5 = st.columns(5)
 with col1:
     pass
