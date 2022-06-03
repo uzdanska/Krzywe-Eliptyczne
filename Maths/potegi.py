@@ -9,7 +9,7 @@ def pierwiastkiPierwotne(p, g):
 
 
 def potegiModulo(p, g):
-    liczbyM = []
+    listaWyników = []
     listaP = []
     listaG = []
     if nwd(p, g) == 1:
@@ -17,10 +17,11 @@ def potegiModulo(p, g):
             # st.write('{}^({}) = {} mod {}'.format(g, i , g**i%p,p))
             listaP.append(i)
             listaG.append(int(g))
-            liczbyM.append(g**i % p)
+            listaWyników.append(g**i % p)
 
         potegiP = { 'Podstawa potęgi': pd.Series(listaG),
                     'Wykladnik potęgi': pd.Series(listaP),
-                    'wynik modulo {}'.format(int(p)): pd.Series(liczbyM)}
+                    'wynik modulo {}'.format(int(p)): pd.Series(listaWyników)}
+
         potegiDf = pd.DataFrame(potegiP)
         return potegiDf.style.background_gradient()

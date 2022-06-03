@@ -144,17 +144,17 @@ p = st.sidebar.select_slider(
     options = liczbyPierwsze(N),
     value = 7 )
 
-wspPunktow(p)
-moduloP = { 'Wsp x': pd.Series(px),
-            'Wsp y': pd.Series(py)}
-
-df = pd.DataFrame.from_dict(moduloP)
 
 noweBtn = st.sidebar.checkbox(label = 'Dodaj / usuń równanie')
 zapiszBtn = st.sidebar.checkbox(label = "Zapisz parametry", value = noweBtn)
 daneBtn = st.sidebar.checkbox('Pokaż współrzędne punktów: ', value = noweBtn)
 wykresBtn = st.sidebar.checkbox(label = "Wygeneruj wykres", value = noweBtn)
 
+wspPunktow(p)
+moduloP = { 'Wsp x': pd.Series(px),
+            'Wsp y': pd.Series(py)}
+
+df = pd.DataFrame.from_dict(moduloP)
 if zapiszBtn:
     st.markdown(f'<h5 style="color:#4C3575;font-size:15px;font:"monospace">{"Postać krzywej eliptycznej: "}</h5>',
                 unsafe_allow_html=True)
@@ -171,7 +171,6 @@ if daneBtn:
         pass
     with col2:
         st.write(df.style.background_gradient())
-
 
 if wykresBtn and zapiszBtn:
     st.markdown(f'<h5 style="color:#4C3575;font-size:15px;font:"monospace">{"Wykres punktowy: "}</h5>',
