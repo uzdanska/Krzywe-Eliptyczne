@@ -172,7 +172,7 @@ if daneBtn:
     with col3:
         pass
     with col2:
-        st.write(df.style.background_gradient()) # ustawienie tła tabeli danych
+        st.write(df.style.background_gradient()) #ustawienie tła tabeli danych
 
 if wykresBtn and zapiszBtn:
     st.markdown(f'<h5 style="color:#4C3575;font-size:15px;font:"monospace">{"Wykres punktowy: "}</h5>',
