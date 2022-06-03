@@ -181,9 +181,9 @@ if wykresBtn and zapiszBtn:
     wykres()
 
 if wykresBtn and zapiszBtn == False:
-    st.markdown(f'<h5 style="color:#4C3575;font-size:15px;font:"monospace">{"Wykres punktowy: "}</h5>',
-                unsafe_allow_html=True)
     st.write('Najpierw zapisz równanie')
+
+
 st.markdown(f'<h2 style="color:#4C3575;font-size:15px;font:"monospace">{"Twierdzenie Eulera: "}</h2>',
                 unsafe_allow_html=True)
 
