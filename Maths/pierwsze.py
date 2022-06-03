@@ -1,14 +1,11 @@
 def czyPierwsza(n):
     """
     Funkcja sprawdza czy n jest liczbą pierwszą
-
     Args:
         n (int): liczba wybrana przez użytkownika
-
     Return:
         True: jeśli n jest liczbą pierwszą
         False: jeśli n nie jest liczbą pierwszą
-
     Raises:
         ValueError: zwraca wyjątek gdy N nie jest liczbą całkowitą.
     """
@@ -26,26 +23,20 @@ def czyPierwsza(n):
     except ValueError as e: # jeśli n nie można zamienić na liczbę całkowitą
         print("ValueError exception: ", e)
 
-# n = input('Podaj liczbę: ')
-# print(czyPierwsza(n))
-
 def liczbyPierwsze(N):
     """
-    Funkcja wypisuje wszystkie liczby pierwsze do wybranego zakresu N
-    
+    Funkcja wypisuje wszystkie liczby pierwsze do wybranego zakresu N.
     Args:
-        N (int): zakres liczb całkowitych 
-
+        N (int): zakres liczb całkowitych
     Return:
         listę liczb pierwszych do wybranego zakresu
-    
     Raises:
         ValueError: zwraca wyjątek gdy N nie jest liczbą całkowitą.
     """
     try:
         N = int(N)
         lista = [] 
-        for i in range(3,N):
+        for i in range(2,N):
             if czyPierwsza(i):
                 lista.append(i)
         return lista

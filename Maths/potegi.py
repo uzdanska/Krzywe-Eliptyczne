@@ -1,40 +1,26 @@
 import pandas as pd
-import streamlit as st
-import pandas as pd
+from math import gcd as nwd
+
+def pierwiastkiPierwotne(p, g):
+    if nwd(p, g) == 1:
+        return "NWD({}, {}) = 1, liczba {} jest względnie pierwsza z {}.".format(p, g, g, p)
+    else:
+        return "NWD({}, {}) != 1, liczba {} nie jest względnie pierwsza z {}.".format(p, g, g, p)
+
+
 def potegiModulo(p, g):
-    # liczbyM = []
-    # for i in range(1, p):
-    #     st.write('{}^({}) = {} mod {}'.format(g, i , g**i%p,p))
-    #     liczbyM.append(g**i % p)
-    # dfPotegiMod = pd.DataFrame
-    return '{}^({}) = {} mod {}'.format(int(g), int(p - 1), int(g) ** int((p - 1)) % int(p), int(p))
+    liczbyM = []
+    listaP = []
+    listaG = []
+    if nwd(p, g) == 1:
+        for i in range(1, p):
+            # st.write('{}^({}) = {} mod {}'.format(g, i , g**i%p,p))
+            listaP.append(i)
+            listaG.append(int(g))
+            liczbyM.append(g**i % p)
 
-# potegiModulo(53, 2)
-
-# liczbyModulo = []
-# for i in range(1, 53):
-#     print('2^(' + str(i) + ') = ' + str(2**i % 53) +  ' mod 53')
-#     liczbyModulo.append(2**i % 53)
-
-# # print(liczbyModulo)
-
-# print(sorted(liczbyModulo))
-
-
-## algorytm ElGamala
-# # print(2**13 % 53)
-# # x = 16 *(32**7)
-# # print(x % 53)
-# # print(2**5 % 53)
-# # print(30**5 % 53)
-# p, g, a, b, m = 53, 2, 5, 7, 16
-# A = g**a
-# print('A = ' +  str(A))
-# c1 = g**b % p
-# c2 = m*(A**b)% p
-# print('(', c1, ', ', c2, ')')
-# g57 = c1**a % p
-# print(g57)
-# x = 22 *(-8)
-# y = 23 * 45
-# print(y % 53)
+        potegiP = { 'Podstawa potęgi': pd.Series(listaG),
+                    'Wykladnik potęgi': pd.Series(listaP),
+                    'wynik modulo {}'.format(int(p)): pd.Series(liczbyM)}
+        potegiDf = pd.DataFrame(potegiP)
+        return potegiDf.style.background_gradient()
