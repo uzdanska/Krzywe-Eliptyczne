@@ -149,15 +149,16 @@ zapiszBtn = st.sidebar.checkbox(label = "Zapisz parametry", value = noweBtn)
 daneBtn = st.sidebar.checkbox('Pokaż współrzędne punktów: ', value = noweBtn)
 wykresBtn = st.sidebar.checkbox(label = "Wygeneruj wykres", value = noweBtn)
 
+if zapiszBtn:
+    st.markdown(f'<h5 style="color:#4C3575;font-size:15px;font:"monospace">{"Postać krzywej eliptycznej: "}</h5>',
+                unsafe_allow_html=True)
+    rownanieZapis(a, b, p)
+
 wspPunktow(p)
 moduloP = { 'Wsp x': pd.Series(px),
             'Wsp y': pd.Series(py)}
 
 df = pd.DataFrame.from_dict(moduloP)
-if zapiszBtn:
-    st.markdown(f'<h5 style="color:#4C3575;font-size:15px;font:"monospace">{"Postać krzywej eliptycznej: "}</h5>',
-                unsafe_allow_html=True)
-    rownanieZapis(a, b, p)
 if daneBtn:
     st.markdown(f'<h5 style="color:#4C3575;font-size:15px;font:"monospace">{"Współrzedne punktów: "}</h5>',
                 unsafe_allow_html=True)
