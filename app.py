@@ -153,7 +153,7 @@ if zapiszBtn:
                 unsafe_allow_html=True)
     rownanieZapis(a, b, p)
 
-wspPunktow(p) # wywołanie funkcji
+wspPunktow(p) #wywołanie funkcji
 
 #dodanie wartości px - lista pierwszych współrzędnych, py - list drugich współrzędnych do słownika
 moduloP = { 'Wsp x': pd.Series(px),
