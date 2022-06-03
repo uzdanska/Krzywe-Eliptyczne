@@ -103,6 +103,7 @@ def wykres():
     Return:
         wykres punktowy.
     """
+
     fig = plte.scatter(df, x=px, y=py, color_discrete_sequence=['#000957'])
     fig.update_layout({
         'title': 'Krzywa eliptyczna nad ciałem modulo {}'.format(p),
@@ -185,6 +186,7 @@ if wykresBtn and zapiszBtn == False:
     st.write('Najpierw zapisz równanie')
 st.markdown(f'<h2 style="color:#4C3575;font-size:15px;font:"monospace">{"Twierdzenie Eulera: "}</h2>',
                 unsafe_allow_html=True)
+
 col1, col2 = st.columns(2)
 with col1:
     P = st.select_slider(
