@@ -162,7 +162,7 @@ moduloP = { 'Wsp x': pd.Series(px),
 # dodanie słownika do tabeli danych
 df = pd.DataFrame.from_dict(moduloP)
 if daneBtn:
-    st.markdown(f'<h5 style="color:#4C3575;font-size:15px;font:"monospace">{"Współrzedne punktów: "}</h5>',
+    st.markdown(f'<h5 style="color:#4C3575;font-size:15px;font:"monospace">{"Współrzędne punktów: "}</h5>',
                 unsafe_allow_html=True)
 
     ## wyśrodkowanie tabeli:
