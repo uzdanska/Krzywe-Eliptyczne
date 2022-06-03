@@ -144,7 +144,6 @@ p = st.sidebar.select_slider(
     options = liczbyPierwsze(N),
     value = 7 )
 
-
 noweBtn = st.sidebar.checkbox(label = 'Dodaj / usuń równanie')
 zapiszBtn = st.sidebar.checkbox(label = "Zapisz parametry", value = noweBtn)
 daneBtn = st.sidebar.checkbox('Pokaż współrzędne punktów: ', value = noweBtn)
