@@ -159,6 +159,7 @@ wspPunktow(p) #wywołanie funkcji
 moduloP = { 'Wsp x': pd.Series(px),
             'Wsp y': pd.Series(py)}
 
+# dodanie słownika do tabeli danych
 df = pd.DataFrame.from_dict(moduloP)
 if daneBtn:
     st.markdown(f'<h5 style="color:#4C3575;font-size:15px;font:"monospace">{"Współrzedne punktów: "}</h5>',
@@ -171,7 +172,7 @@ if daneBtn:
     with col3:
         pass
     with col2:
-        st.write(df.style.background_gradient())
+        st.write(df.style.background_gradient()) # ustawienie tła tabeli danych
 
 if wykresBtn and zapiszBtn:
     st.markdown(f'<h5 style="color:#4C3575;font-size:15px;font:"monospace">{"Wykres punktowy: "}</h5>',
