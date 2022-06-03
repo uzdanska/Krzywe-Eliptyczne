@@ -7,7 +7,6 @@ def pierwiastkiPierwotne(p, g):
     else:
         return "NWD({}, {}) != 1, liczba {} nie jest względnie pierwsza z {}.".format(p, g, g, p)
 
-
 def potegiModulo(p, g):
     listaWyników = []
     listaP = []
