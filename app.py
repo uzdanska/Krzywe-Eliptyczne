@@ -20,7 +20,7 @@ def fx(x):
     """
     try:
         x = int(x)
-        return pow(x, 3) + a * x - b
+        return pow(x, 3) + a * x + b
     except ValueError as e:
         print("ValueError exception: ", e)
 
@@ -187,7 +187,6 @@ if wykresBtn and zapiszBtn == False:
 st.markdown(f'<h2 style="color:#4C3575;font-size:15px;font:"monospace">{"Pierwiastki pierwotne oraz generator grupy"}</h2>',
                 unsafe_allow_html=True)
 
-## Twierdzenie Eulera
 col1, col2 = st.columns(2)
 with col1:
     P = st.select_slider(
