@@ -1,5 +1,18 @@
 import pandas as pd
 from math import gcd as nwd
+import streamlit as st
+
+def generatorGrupy(lista, p, g):
+    lista.sort()
+    for i in range(len(lista)):
+        if lista[i] == i + 1:
+            pass
+        else:
+            return 'Nie wszystkie wartości z przedziału [1, {}] znajdują się w liście. ' \
+                   ' Także {} nie jest generatorem grupy.'.format(p-1, g, p-1)
+    return 'Wszystkie wartości z przedziału [1, {}] znajdują się w liście.' \
+           ' Także {} jest generatorem grupy.'.format(p-1, g, p)
+
 
 def pierwiastkiPierwotne(p, g):
     if nwd(p, g) == 1:
@@ -23,6 +36,7 @@ def potegiModulo(p, g):
                     'wynik modulo {}'.format(int(p)): pd.Series(listaWyników)}
 
         potegiDf = pd.DataFrame(potegiP)
-        return potegiDf.style.background_gradient()
+        st.write(potegiDf.style.background_gradient())
+        return generatorGrupy(listaWyników, p, g)
     else:
         return 'Nie można policzyć kolejnym potęg.'
