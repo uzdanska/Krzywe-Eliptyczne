@@ -40,6 +40,7 @@ def fy(y):
     except ValueError as e:
         print("ValueError exception: ", e)
 
+
 def wspPunktow(p):
     """
     Funkcja dodająca do listy wartości punktów modulo p jeśli obie strony równania są równe modulo p.
@@ -167,7 +168,7 @@ if daneBtn:
                 unsafe_allow_html=True)
 
     ## wyśrodkowanie tabeli:
-    col1, col2, col3= st.columns(3)
+    col1, col2, col3 = st.columns(3)
     with col1:
         pass
     with col3:
