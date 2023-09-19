@@ -1,7 +1,19 @@
+
 import streamlit as st
 import pandas as pd
 from math import pow
-from math import gcd as nwd
+import subprocess
+
+# Define the path to your requirements.txt file
+requirements_file = "requirements.txt"
+
+# Use subprocess to run the pip install command
+try:
+    subprocess.check_call(["pip", "install", "-r", requirements_file])
+    print("Dependencies installed successfully.")
+except subprocess.CalledProcessError as e:
+    print(f"Error: {e}")
+
 import plotly.express as plte
 from Maths.pierwsze import liczbyPierwsze, czyPierwsza
 from Maths.potegi import potegiModulo, pierwiastkiPierwotne
